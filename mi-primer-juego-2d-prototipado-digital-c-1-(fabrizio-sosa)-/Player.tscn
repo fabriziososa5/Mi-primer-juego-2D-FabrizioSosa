@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://xs0m3eh60j8j"]
+[gd_scene load_steps=8 format=3 uid="uid://xs0m3eh60j8j"]
 
+[ext_resource type="Script" uid="uid://ce3df5o71anuw" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://bvkvif74a5osn" path="res://art/playerGrey_up1.png" id="1_e80uo"]
 [ext_resource type="Texture2D" uid="uid://b0bb6ly5a2wum" path="res://art/playerGrey_up2.png" id="2_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://15qug3b7i34a" path="res://art/playerGrey_walk1.png" id="3_tdg3f"]
@@ -35,6 +36,7 @@ radius = 27.0
 height = 70.0
 
 [node name="Player" type="Area2D"]
+script = ExtResource("1_cxr5p")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -44,3 +46,5 @@ animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wi0c6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
